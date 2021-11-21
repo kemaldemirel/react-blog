@@ -1,10 +1,8 @@
 import React from 'react';
-import { PostItem } from '../components';
+import { PostItem, SelectSort, LoaderPosts } from '../components';
 import { Box, Grid, Pagination } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPosts } from '../store/actions/posts';
-import SelectSort from '../components/SelectSort';
-import LoaderPosts from '../components/LoaderPosts';
 
 const Home = () => {
   const { posts, loaded } = useSelector(({ post }) => post);
@@ -31,7 +29,7 @@ const Home = () => {
           <SelectSort />
         </Grid>
       </Grid>
-      <Pagination count={10} />
+      <Pagination count={20} />
     </Box>
   );
 };
