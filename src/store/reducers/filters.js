@@ -1,5 +1,5 @@
 const initialState = {
-  sortBY: 'popular',
+  sortBY: 'views',
 };
 
 export const filterReducer = (state = initialState, { type, payload }) => {

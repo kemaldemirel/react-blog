@@ -11,8 +11,9 @@ import {
 } from '@mui/material/';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import InsertCommentIcon from '@mui/icons-material/InsertComment';
 
-export default function PostIten({ description, id, imageURL, title, favorites, looks }) {
+export default function PostIten({ description, id, imageURL, title, favorites, views, comments }) {
   const [likes, setLikes] = React.useState({
     countLikes: favorites,
     colorLikeBtn: 'disabled',
@@ -41,7 +42,7 @@ export default function PostIten({ description, id, imageURL, title, favorites, 
         </Typography>
       </CardContent>
       <CardActions sx={{ marginTop: 'auto', justifyContent: 'space-between' }}>
-        <Button size="small">Читать дальше...</Button>
+        <Button size="small">Читать</Button>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton aria-label="add to favorites" onClick={toggleClickLike}>
             <FavoriteIcon color={likes.colorLikeBtn} sx={{ fontSize: '15px' }} />
@@ -53,7 +54,13 @@ export default function PostIten({ description, id, imageURL, title, favorites, 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <RemoveRedEyeIcon color="disabled" sx={{ fontSize: '15px' }} />
           <Typography variant="span" component="span">
-            {looks}
+            {views}
+          </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <InsertCommentIcon color="disabled" sx={{ fontSize: '15px' }} />
+          <Typography variant="span" component="span">
+            {comments}
           </Typography>
         </Box>
       </CardActions>
