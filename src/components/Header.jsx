@@ -6,14 +6,14 @@ import SearchForm from './SearchForm';
 export default function Header({ onClickOpenForm }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: 'teal' }}>
         <Toolbar>
           <BookIcon />
           <Typography variant="h6" component="h6" sx={{ flexGrow: 1 }}>
             RB
           </Typography>
           <SearchForm />
-          <Button onClick={onClickOpenForm} variant="contained" color="secondary">
+          <Button onClick={onClickOpenForm} variant="contained" color="primary">
             Добавить пост
           </Button>
         </Toolbar>
